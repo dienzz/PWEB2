@@ -1,37 +1,3 @@
-{{-- @extends('layouts.app')
-
-@section('title', 'Info Mengenai GYM')
-
-@section('content')
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Info Mengenai Badai Fitness & Gym</h1>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="card shadow-sm mb-4">
-            <div class="card-header bg-success text-white">
-                <h5 class="mb-0">Detail Informasi</h5>
-            </div>
-            <div class="card-body">
-                <p><strong>Lokasi:</strong> Badai Fitness & Gym berlokasi di Jl. Cirendang-Cigugur, Rw 1, Cirendang, Kec. Cigugur, Kabupaten Kuningan.</p>
-                <p><strong>Layanan:</strong> Menurut akun Instagram @badaigym (diperbarui 14 Desember 2023), gym ini menawarkan layanan private trainer bagi mereka yang ingin menjalani program pembentukan tubuh. Namun, layanan ini tidak tersedia untuk kunjungan harian.</p>
-                <p><strong>Biaya Keanggotaan:</strong> Biaya keanggotaan di Badai Fitness & Gym cukup terjangkau dan tidak mahal, menjadikannya pilihan yang kompetitif di wilayah Kuningan. Biaya bulanan untuk member sekitar Rp150.000 dengan biaya pendaftaran per hari Rp20.000, meskipun harga dapat bervariasi.</p>
-                <p><strong>Fasilitas:</strong> Gym ini dilengkapi dengan fasilitas yang nyaman dan peralatan lengkap untuk mendukung latihan berbagai tingkat, termasuk alat kardio dan beban. Ulasan dari pengguna menyebutkan lingkungan yang memuaskan dan peralatan yang memadai untuk kebutuhan fitness.</p>
-                <p><strong>Jam Operasional:</strong> Gym ini buka setiap hari dari pukul 09.00 hingga 21.00 WIB, kecuali pada hari libur nasional tertentu.</p>
-                <p><strong>Informasi Tambahan:</strong> Badai Fitness & Gym dikenal sebagai tempat yang ramah, dengan komunitas yang mendukung anggota untuk mencapai tujuan kebugaran mereka. Beberapa ulasan menyebutkan bahwa gym ini telah membantu anggota meningkatkan kekuatan fisik, dengan beberapa melaporkan kenaikan berat badan hingga 10 kg dalam dua bulan. Gym ini juga aktif di media sosial untuk membagikan tips kesehatan dan update program. Tagline : <strong>GET BETTER LIFE!</strong></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12 text-center">
-        <!-- Tautan kembali ke pengaturan.index dihapus sesuai permintaan -->
-    </div>
-</div>
-@endsection --}}
-
 @extends('layouts.app')
 
 @section('title', 'Info Mengenai GYM')

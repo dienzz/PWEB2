@@ -6,18 +6,16 @@ use App\Models\Visitor;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Carbon; // Pastikan Carbon diimport
+use Illuminate\Support\Carbon;
 
 class VisitorController extends Controller
 {
-    // Global helper function for session check (Moved from web.php for better encapsulation)
     private function checkSession()
     {
-        // Adjust 'user_email' or 'user_id' based on your actual session key
         if (!session()->has('user_email') && !session()->has('user_id')) {
             return redirect()->route('login')->send();
         }
-        return null; // Return null if session is active
+        return null; 
     }
 
     public function index(Request $request)
@@ -41,7 +39,6 @@ class VisitorController extends Controller
             $query->where('status', $request->status_filter);
         }
 
-        // Order by latest entry
         $query->orderBy('waktu_masuk', 'desc');
 
         $visitors = $query->paginate(10);
@@ -116,7 +113,7 @@ class VisitorController extends Controller
             'no_kartu' => 'nullable|string|exists:members,no_kartu',
             'nama' => 'required|string|max:255',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'remove_photo' => 'nullable|boolean', // Untuk checkbox hapus foto
+            'remove_photo' => 'nullable|boolean', 
             'status' => 'required|in:in,out',
             'waktu_masuk' => 'required|date',
             'waktu_keluar' => 'nullable|date|after_or_equal:waktu_masuk',
@@ -128,14 +125,12 @@ class VisitorController extends Controller
         $visitor->waktu_masuk = $request->waktu_masuk;
         $visitor->waktu_keluar = $request->waktu_keluar;
 
-        // Handle photo removal
         if ($request->has('remove_photo') && $request->input('remove_photo')) {
             if ($visitor->photo) {
                 Storage::disk('public')->delete($visitor->photo);
                 $visitor->photo = null;
             }
         } elseif ($request->hasFile('photo')) {
-            // Hapus foto lama jika ada dan ada foto baru diunggah
             if ($visitor->photo) {
                 Storage::disk('public')->delete($visitor->photo);
             }

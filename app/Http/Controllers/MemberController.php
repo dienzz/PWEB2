@@ -40,9 +40,7 @@ class MemberController extends Controller
             $query->where('jk', $request->jk_filter);
         }
 
-        $members = $query->paginate(10); // Sesuaikan jumlah per halaman jika perlu
-
-        // Untuk mempertahankan parameter pencarian/filter saat navigasi pagination
+        $members = $query->paginate(10); 
         $members->appends($request->all());
 
         return view('members.index', compact('members'));
@@ -124,7 +122,7 @@ class MemberController extends Controller
             'tgl_akhir' => 'required|date|after_or_equal:tgl_mulai',
             'no_hp' => 'required|string|max:20',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'remove_photo' => 'nullable|boolean', // Untuk checkbox hapus foto
+            'remove_photo' => 'nullable|boolean', 
         ]);
 
         $member->no_kartu = $request->no_kartu;
@@ -143,7 +141,6 @@ class MemberController extends Controller
                 $member->photo = null;
             }
         } elseif ($request->hasFile('photo')) {
-            // Hapus foto lama jika ada dan ada foto baru diunggah
             if ($member->photo) {
                 Storage::disk('public')->delete($member->photo);
             }

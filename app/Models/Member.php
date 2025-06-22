@@ -10,7 +10,6 @@ class Member extends Model
         'tgl_mulai', 'tgl_akhir', 'no_hp', 'photo'
     ];
 
-    // Jika Anda memiliki model Visitor dan Payment, relasi ini benar.
     public function visitors()
     {
         return $this->hasMany(Visitor::class, 'no_kartu', 'no_kartu');

@@ -57,7 +57,7 @@
                     @endfor
                 </select>
             </div>
-            <div class="col-md-3 d-flex mt-3"> {{-- Added mt-3 for spacing --}}
+            <div class="col-md-3 d-flex mt-3">
                 <button type="submit" class="btn btn-dark me-2">Cari & Filter</button>
                 <a href="{{ route('payments.index') }}" class="btn btn-outline-secondary">Reset</a>
             </div>

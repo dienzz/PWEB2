@@ -23,7 +23,7 @@ class LaporanController extends Controller
         $sessionCheck = $this->checkSession();
         if ($sessionCheck) return $sessionCheck;
 
-        $query = Laporan::query()->with(['member', 'payment']); // Eager load both member and payment
+        $query = Laporan::query()->with(['member', 'payment']); 
 
         if ($request->has('search') && !empty($request->search)) {
             $search = $request->search;
@@ -66,7 +66,7 @@ class LaporanController extends Controller
         if ($sessionCheck) return $sessionCheck;
 
         $members = Member::all();
-        $payments = Payment::all(); // Tambahkan daftar pembayaran untuk dropdown
+        $payments = Payment::all(); 
         return view('laporans.create', compact('members', 'payments'));
     }
 
@@ -80,7 +80,7 @@ class LaporanController extends Controller
             'tanggal' => 'required|date',
             'jenis_pemasukan' => 'required|in:pendaftaran,langganan',
             'jumlah' => 'required|numeric|min:0',
-            'payment_id' => 'nullable|exists:payments,id', // Validasi untuk payment_id
+            'payment_id' => 'nullable|exists:payments,id',
         ]);
 
         $laporan = new Laporan();
@@ -88,16 +88,12 @@ class LaporanController extends Controller
         $laporan->tanggal = $request->tanggal;
         $laporan->jenis_pemasukan = $request->jenis_pemasukan;
         $laporan->jumlah = $request->jumlah;
-        $laporan->payment_id = $request->payment_id; // Simpan payment_id jika ada
+        $laporan->payment_id = $request->payment_id; 
 
-        // Hapus validasi manual yang menyebabkan error
-        // Jika Anda tetap ingin memvalidasi jumlah dengan harga, gunakan pendekatan lain (misalnya, pesan info)
         if ($request->payment_id) {
             $payment = Payment::find($request->payment_id);
             if ($payment && $request->jumlah != $payment->harga) {
-                // Alih-alih error, beri peringatan atau sesuaikan jumlah secara otomatis
-                $laporan->jumlah = $payment->harga; // Set jumlah sesuai harga pembayaran
-                // Atau tambahkan pesan info untuk pengguna
+                $laporan->jumlah = $payment->harga; 
                 session()->flash('info', 'Jumlah telah disesuaikan dengan harga pembayaran (' . number_format($payment->harga, 2, ',', '.') . ' Rp).');
             }
         }
@@ -112,7 +108,7 @@ class LaporanController extends Controller
         $sessionCheck = $this->checkSession();
         if ($sessionCheck) return $sessionCheck;
 
-        $laporan->load('member', 'payment'); // Eager load both relationships
+        $laporan->load('member', 'payment'); 
         return view('laporans.show', compact('laporan'));
     }
 

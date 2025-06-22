@@ -57,13 +57,12 @@
             padding-bottom: 2rem;
             text-align: left;
         }
-        /* Style untuk footer */
         .footer {
             background-color: #343a40;
             text-align: center;
-            color: white; /* Pastikan warna teks putih */
+            color: white; 
             margin-top: auto;
-            width: 100%; /* Pastikan footer membentang penuh */
+            width: 100%; 
         }
         .footer .container {
             padding-top: 0.5rem;

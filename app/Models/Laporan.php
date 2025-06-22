@@ -14,7 +14,7 @@ class Laporan extends Model
         'tanggal',
         'jenis_pemasukan',
         'jumlah',
-        'payment_id', // Tambahkan payment_id ke fillable
+        'payment_id', 
     ];
 
     protected $casts = [

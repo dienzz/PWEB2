@@ -16,7 +16,6 @@ class DashboardController extends Controller
             return redirect('/login');
         }
 
-        // Calculate statistics
         $activeMembers = Member::whereDate('tgl_akhir', '>=', Carbon::today())->count();
         $visitorsToday = Visitor::whereDate('created_at', Carbon::today())->count();
         $pendingPayments = Payment::where('status', 'pending')->count(); 

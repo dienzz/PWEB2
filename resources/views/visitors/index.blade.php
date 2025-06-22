@@ -79,7 +79,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="8" class="text-center">Tidak ada data pengunjung.</td> {{-- Adjusted colspan to 8 --}}
+                    <td colspan="8" class="text-center">Tidak ada data pengunjung.</td> 
                 </tr>
             @endforelse
         </tbody>

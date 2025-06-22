@@ -21,7 +21,6 @@ class AuthController extends Controller
 
         $user = user1::where('email', $request->email)->first();
 
-        // Direct password comparison as requested (NO HASHING)
         if ($user && $request->password === $user->password) {
             session([
                 'user_id' => $user->id,

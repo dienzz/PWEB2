@@ -14,17 +14,14 @@
     <div class="card-body">
         <div class="row mb-3">
             <div class="col-md-3"><strong>Nama:</strong></div>
-            {{-- Pastikan ini mengambil dari 'user_name' seperti yang disimpan saat login --}}
             <div class="col-md-9">{{ session('user_name') ?? 'N/A' }}</div>
         </div>
         <div class="row mb-3">
             <div class="col-md-3"><strong>Email:</strong></div>
-            {{-- PERBAIKAN DI SINI: Gunakan 'user_email' --}}
             <div class="col-md-9">{{ session('user_email') ?? 'N/A' }}</div>
         </div>
         <div class="row mb-3">
             <div class="col-md-3"><strong>ID Pengguna:</strong></div>
-            {{-- Ini sudah benar, menggunakan 'user_id' --}}
             <div class="col-md-9">{{ session('user_id') ?? 'N/A' }}</div>
         </div>
     </div>
