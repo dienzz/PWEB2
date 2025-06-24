@@ -15,7 +15,7 @@ class PaymentSeeder extends Seeder
         Payment::create([
             'no_kartu' => 'M001',
             'jenis_langganan' => 'Bulanan',
-            'harga' => 250000,
+            'harga' => 150000,
             'status' => 'completed',
             'tanggal_pembayaran' => Carbon::today()->subMonths(2),
             'created_at' => Carbon::today()->subMonths(2),
@@ -36,8 +36,8 @@ class PaymentSeeder extends Seeder
         // Pembayaran untuk M003 (pending)
         Payment::create([
             'no_kartu' => 'M003',
-            'jenis_langganan' => 'Harian',
-            'harga' => 30000,
+            'jenis_langganan' => 'Bulanan',
+            'harga' => 150000,
             'status' => 'pending',
             'tanggal_pembayaran' => Carbon::today(),
             'created_at' => Carbon::today(),
@@ -48,7 +48,7 @@ class PaymentSeeder extends Seeder
         Payment::create([
             'no_kartu' => 'M004',
             'jenis_langganan' => 'Bulanan',
-            'harga' => 250000,
+            'harga' => 150000,
             'status' => 'failed',
             'tanggal_pembayaran' => Carbon::today()->subDays(10),
             'created_at' => Carbon::today()->subDays(10),
@@ -59,7 +59,7 @@ class PaymentSeeder extends Seeder
         Payment::create([
             'no_kartu' => 'M005',
             'jenis_langganan' => 'Bulanan',
-            'harga' => 250000,
+            'harga' => 150000,
             'status' => 'completed',
             'tanggal_pembayaran' => Carbon::today()->subMonths(1),
             'created_at' => Carbon::today()->subMonths(1),
