@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->enum('jenis_pemasukan', ['pendaftaran', 'langganan']);
             $table->decimal('jumlah', 10, 2);
-            $table->unsignedBigInteger('payment_id')->nullable(); // Foreign key ke payments.id
+            $table->unsignedBigInteger('payment_id')->nullable(); 
             $table->timestamps();
 
             // Foreign key ke tabel members
